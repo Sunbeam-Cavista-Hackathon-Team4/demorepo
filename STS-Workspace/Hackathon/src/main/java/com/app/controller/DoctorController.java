@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.dto.DoctorDTO;
 import com.app.entities.City;
-import com.app.dto.RegisterPatientDTO;
+
 
 import com.app.service.DoctorService;
 
-import io.swagger.v3.oas.models.responses.ApiResponse;
 
 @RestController
 @CrossOrigin("http://localhost:3000/")

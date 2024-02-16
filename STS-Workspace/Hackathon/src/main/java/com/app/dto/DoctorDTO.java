@@ -26,8 +26,6 @@ public class DoctorDTO {
 
 	private LocalDate joinDate;
 
-	private String mobileNo;
-
 	private Availability availability;
 
 	private UserEntity user;
