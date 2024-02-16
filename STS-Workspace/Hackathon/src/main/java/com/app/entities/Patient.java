@@ -33,8 +33,7 @@ import lombok.ToString;
 
 public class Patient extends BaseEntity  {
 
-	@Column(length = 30,nullable = false)
-	private String name;
+	
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private LocalDate dob;
@@ -53,7 +52,7 @@ public class Patient extends BaseEntity  {
 	
 	@OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
 	@JoinColumn(name = "user_id")
-	private User user;
+	private UserEntity user;
 	
 	
 	

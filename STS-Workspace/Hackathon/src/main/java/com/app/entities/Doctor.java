@@ -29,8 +29,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Doctor extends BaseEntity  {
 
-	@Column(length = 30,nullable = false)
-	private String name;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private LocalDate dob;
@@ -57,7 +55,7 @@ public class Doctor extends BaseEntity  {
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
-	private User user;
+	private UserEntity user;
 	
 	@OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL)
 	private List<Appointment> appointments = new ArrayList<Appointment>();
