@@ -36,6 +36,7 @@ public class Doctor extends BaseEntity  {
 	private LocalDate dob;
 	
 	@Enumerated(EnumType.STRING)
+	@Column
 	private Gender gender;
 	
 	@Column(length = 30)
@@ -50,7 +51,7 @@ public class Doctor extends BaseEntity  {
 	@Enumerated(EnumType.STRING)
 	private Availability availability;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
 	
