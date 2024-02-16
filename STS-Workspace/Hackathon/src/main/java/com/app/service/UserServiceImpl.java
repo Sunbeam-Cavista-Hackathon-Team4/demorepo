@@ -36,4 +36,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findByEmail(email).orElse(null);
 	}
 
+	@Override
+	public UserEntity addNewUser(UserEntity userEntity) {
+		return userDao.save(userEntity);
+	}
+
 }

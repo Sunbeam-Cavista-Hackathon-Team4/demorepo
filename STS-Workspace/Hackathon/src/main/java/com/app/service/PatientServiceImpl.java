@@ -49,4 +49,9 @@ public class PatientServiceImpl implements PatientService {
 		pDao.findById(patient_id).orElseThrow(()->new ResourceNotFoundException("not patient exists of this id"));
 		return new ApiResponse("patient updated");
 	}
+	@Override
+	public ApiResponse addPatient(Patient patient) {
+		pDao.save(patient);
+		return new ApiResponse("Patient Created");
+	}
 }
