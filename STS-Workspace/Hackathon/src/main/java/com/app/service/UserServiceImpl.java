@@ -31,4 +31,9 @@ public class UserServiceImpl implements UserService {
 		return mapper.map(userDao.save(user), Signup.class);
 	}
 
+	@Override
+	public UserEntity findByEmailAddress(String email) {
+		return userDao.findByEmail(email).orElse(null);
+	}
+
 }

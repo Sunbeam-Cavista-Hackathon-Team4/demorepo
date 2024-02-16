@@ -16,8 +16,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
 import com.app.entities.UnregisteredUser;
-import com.app.entities.UserEntity;
-import com.app.entities.UserRole;
 import com.github.javafaker.Faker;
 
 @DataJpaTest
