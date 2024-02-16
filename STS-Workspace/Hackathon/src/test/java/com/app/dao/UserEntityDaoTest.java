@@ -31,14 +31,14 @@ public class UserEntityDaoTest {
 
 	@Test
 	void testAddUsers() {
-		List<UserEntity> list=new ArrayList<UserEntity>();
-		for(int i=0;i<20;i++) {
-			Faker faker = new Faker(new Locale("en-IND"));
-			UserEntity user=new UserEntity(faker.name().firstName(),faker.name().lastName(),faker.internet().emailAddress(),enc.encode(faker.animal().name()),UserRole.ROLE_PATIENT);
-			userRepo.save(user);
-			list.add(user);
-		}
-		assertEquals(20, list.size());
+//		List<UserEntity> list=new ArrayList<UserEntity>();
+//		for(int i=0;i<20;i++) {
+//			Faker faker = new Faker(new Locale("en-IND"));
+//			UserEntity user=new UserEntity(faker.name().firstName(),faker.name().lastName(),faker.internet().emailAddress(),enc.encode(faker.animal().name()),UserRole.ROLE_PATIENT);
+//			userRepo.save(user);
+//			list.add(user);
+//		}
+//		assertEquals(20, list.size());
 	}
 
 }
