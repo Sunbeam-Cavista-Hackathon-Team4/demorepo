@@ -1,5 +1,7 @@
 package com.app.dto;
 
+import java.time.LocalDate;
+
 import com.app.entities.Address;
 import com.app.entities.Category;
 import com.app.entities.Gender;
@@ -22,6 +24,8 @@ private String firstName;
 	private String email;
 	
 	private Gender gender;
+	
+	private LocalDate dob;
 
 	private Category category;
 	
