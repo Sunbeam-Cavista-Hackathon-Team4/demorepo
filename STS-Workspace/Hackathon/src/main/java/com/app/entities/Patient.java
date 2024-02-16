@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -41,14 +42,13 @@ public class Patient extends BaseEntity  {
 	private Gender gender;
 	
 	@OneToOne
-	
 	private Address address;
 	
 	
 	@Column(length = 15)
 	private String mobileNo;
-	@Column(length = 30,nullable = false)
-	private String emailid;
+	@Lob
+	private String issue;
 	
 	@OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
 	@JoinColumn(name = "user_id")
