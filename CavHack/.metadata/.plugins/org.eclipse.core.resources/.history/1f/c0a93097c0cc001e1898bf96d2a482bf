@@ -1,0 +1,10 @@
+package com.app.dto;
+
+import com.app.entities.UserRole;
+
+public class SignInDTO {
+
+	private Long id;
+	
+	private UserRole role;
+}
