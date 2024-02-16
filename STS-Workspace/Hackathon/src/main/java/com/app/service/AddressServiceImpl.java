@@ -15,7 +15,10 @@ import com.app.dto.AddressDTO;
 import com.app.dto.ApiResponse;
 import com.app.entities.Address;
 import com.app.entities.Patient;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c876684aa03ea6c026b5adde9a31b3252ae381b
 @Service
 @Transactional
 public class AddressServiceImpl implements AddressService {
