@@ -42,6 +42,8 @@ public class Appointment extends BaseEntity {
 	
 	@Lob
 	private String remarks; 
+	@Lob
+	private String medication;
 
 	@Enumerated(EnumType.STRING)
 	@Column(length=20)
