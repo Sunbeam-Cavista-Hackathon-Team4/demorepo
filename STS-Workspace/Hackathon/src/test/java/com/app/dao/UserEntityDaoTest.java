@@ -1,11 +1,11 @@
 package com.app.dao;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -16,12 +16,13 @@ import org.springframework.test.annotation.Rollback;
 
 import com.app.entities.UserEntity;
 import com.app.entities.UserRole;
+import com.github.javafaker.Faker;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
-class UserEntityDaoTest {
-	// dep
+public class UserEntityDaoTest {
+	
 	@Autowired
 	private UserEntityDao userRepo;
 
@@ -30,13 +31,14 @@ class UserEntityDaoTest {
 
 	@Test
 	void testAddUsers() {
-		List<UserEntity> list = List.of(
-				new UserEntity("a1", "b1", "a1@gmail.com", enc.encode("12345"), UserRole.ROLE_ADMIN),
-				new UserEntity("a2", "b2", "a2@gmail.com", enc.encode("2345"), UserRole.ROLE_PATIENT),
-				new UserEntity("a3", "b3", "a3@gmail.com", enc.encode("1345"), UserRole.ROLE_DOCTOR));
-		List<UserEntity> list2 = userRepo.saveAll(list);
-		assertEquals(3, list2.size());
-
+		List<UserEntity> list=new ArrayList<UserEntity>();
+		for(int i=0;i<20;i++) {
+			Faker faker = new Faker(new Locale("en-IND"));
+			UserEntity user=new UserEntity(faker.name().firstName(),faker.name().lastName(),faker.internet().emailAddress(),enc.encode(faker.animal().name()),UserRole.ROLE_PATIENT);
+			userRepo.save(user);
+			list.add(user);
+		}
+		assertEquals(20, list.size());
 	}
 
 }
