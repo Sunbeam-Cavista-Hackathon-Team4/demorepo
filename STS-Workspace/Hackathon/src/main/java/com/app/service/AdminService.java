@@ -2,13 +2,14 @@ package com.app.service;
 
 import java.util.List;
 
-import com.app.dto.PatientDTO;
+import com.app.dto.ApiResponse;
+import com.app.dto.PatientDetailDTO;
 import com.app.entities.Patient;
 
 public interface AdminService {
 
-	List<PatientDTO> getUnregisteredPatients();
+	List<PatientDetailDTO> getUnregisteredPatients();
 
-	Patient updateDetails(Patient patient);
+	ApiResponse updateDetails(PatientDetailDTO patient);
 
 }

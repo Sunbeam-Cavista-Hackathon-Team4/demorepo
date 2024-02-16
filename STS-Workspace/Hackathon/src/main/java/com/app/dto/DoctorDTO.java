@@ -2,9 +2,9 @@ package com.app.dto;
 
 import java.time.LocalDate;
 
-import com.app.entities.Address;
-import com.app.entities.Category;
+import com.app.entities.Availability;
 import com.app.entities.Gender;
+import com.app.entities.UserEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,22 +15,21 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PatientDetailDTO {
-	
-private String firstName;
-	
-	private String lastName;
+public class DoctorDTO {
 
-	private String email;
-	
-	private Gender gender;
 	
 	private LocalDate dob;
 
-	private Category category;
-	
-	private Address address;
-	
+	private Gender gender;
+
+	private String qualification;
+
+	private LocalDate joinDate;
+
 	private String mobileNo;
+
+	private Availability availability;
+
+	private UserEntity user;
 
 }

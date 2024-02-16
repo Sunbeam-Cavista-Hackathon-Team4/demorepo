@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.dto.PatientDTO;
+import com.app.dto.ApiResponse;
+import com.app.dto.PatientDetailDTO;
 import com.app.entities.Patient;
 import com.app.service.AdminService;
 
@@ -26,14 +27,13 @@ public class AdminController {
 	private ModelMapper mapper;
 	
 	@GetMapping("/new")
-	public List<PatientDTO> getUnregisteredPatients() {
+	public List<PatientDetailDTO> getUnregisteredPatients() {
 		return adminService.getUnregisteredPatients();
 	}
 	
 	@PostMapping("/update")
-	public PatientDTO updateDetails(@RequestBody PatientDTO details) {
-		Patient patient = mapper.map(details, Patient.class);
-		return mapper.map(adminService.updateDetails(patient), PatientDTO.class);
+	public ApiResponse updateDetails(@RequestBody PatientDetailDTO details) {
+		return adminService.updateDetails(details);
 	}
 	
 }
