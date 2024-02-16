@@ -33,7 +33,7 @@ public class Address {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(length = 50)
-	private String city;
+	private City city;
 
 	@Column
 	private int pincode;
