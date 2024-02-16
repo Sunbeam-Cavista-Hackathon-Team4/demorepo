@@ -34,7 +34,7 @@ public class Doctor extends BaseEntity  {
 	private LocalDate dob;
 	
 	@Enumerated(EnumType.STRING)
-	@Column
+	@Column(length = 20)
 	private Gender gender;
 	
 	@Column(length = 30)
@@ -47,6 +47,7 @@ public class Doctor extends BaseEntity  {
 	private String mobileNo;
 	
 	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
 	private Availability availability;
 	
 	@OneToOne
