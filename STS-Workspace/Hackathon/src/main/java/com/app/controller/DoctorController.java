@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.app.dto.PatientDTO;
+import com.app.dto.RegisterPatientDTO;
 import com.app.service.DoctorService;
 
 @RestController
@@ -22,7 +22,7 @@ public class DoctorController {
 	@GetMapping("/all")
 	public ResponseEntity<?> getAllDoctors(){
 		
-		return  ResponseEntity.status(HttpStatus.OK).body(new PatientDTO());
+		return  ResponseEntity.status(HttpStatus.OK).body(new RegisterPatientDTO());
 	}
 
 }

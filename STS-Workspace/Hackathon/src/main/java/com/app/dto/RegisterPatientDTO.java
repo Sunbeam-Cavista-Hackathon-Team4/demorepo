@@ -1,6 +1,11 @@
 package com.app.dto;
 
-import com.app.entities.Address;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import com.app.entities.Category;
 import com.app.entities.Gender;
 
@@ -11,22 +16,20 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class PatientDetailDTO {
+@NoArgsConstructor
+public class RegisterPatientDTO {
+
 	
-private String firstName;
+	private String firstName;
 	
 	private String lastName;
 
 	private String email;
 	
-	private Gender gender;
-
-	private Category category;
+	private String phoneNo;
 	
-	private Address address;
-	
-	private String mobileNo;
+	private LocalDateTime registrationCall;
 
+	
 }
