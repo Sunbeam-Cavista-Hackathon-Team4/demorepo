@@ -60,4 +60,9 @@ public class PatientServiceImpl implements PatientService {
 		patient.getLastName();
 		return new ApiResponse("patient updated");
 	}
+	@Override
+	public ApiResponse addPatient(Patient patient) {
+		pDao.save(patient);
+		return new ApiResponse("Patient Created");
+	}
 }

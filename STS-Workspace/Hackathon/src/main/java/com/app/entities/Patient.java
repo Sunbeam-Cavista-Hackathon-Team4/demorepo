@@ -75,6 +75,21 @@ public class Patient extends BaseEntity  {
 		this.appointments.add(a);
 		a.setPatient(this);
 	}
+
+
+
+
+
+
+
+
+
+
+
+	public Patient(UserEntity user) {
+		super();
+		this.user = user;
+	}
 	
 	
 	

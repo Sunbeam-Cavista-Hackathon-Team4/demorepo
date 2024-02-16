@@ -8,4 +8,6 @@ public interface UserService {
 	Signup userRegistration(Signup reqDTO);
 	
 	UserEntity findByEmailAddress(String email);
+
+	UserEntity addNewUser(UserEntity userEntity);
 }
