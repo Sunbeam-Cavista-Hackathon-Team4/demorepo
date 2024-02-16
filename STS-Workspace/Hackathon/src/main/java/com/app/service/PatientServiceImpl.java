@@ -12,6 +12,7 @@ import com.app.custom_exceptions.ResourceNotFoundException;
 import com.app.dao.PatientDao;
 import com.app.dao.UserEntityDao;
 import com.app.dto.ApiResponse;
+import com.app.dto.PatientDetailDTO;
 import com.app.dto.RegisterPatientDTO;
 import com.app.entities.Patient;
 import com.app.entities.UserEntity;
@@ -42,5 +43,10 @@ public class PatientServiceImpl implements PatientService {
 		
 		patient.getUser().setPassword(encoder.encode(password));
 		return new ApiResponse("password changed");
+	}
+	 @Override
+	public ApiResponse updatePatient(PatientDetailDTO patient, Long patient_id) {
+		pDao.findById(patient_id).orElseThrow(()->new ResourceNotFoundException("not patient exists of this id"));
+		return new ApiResponse("patient updated");
 	}
 }
