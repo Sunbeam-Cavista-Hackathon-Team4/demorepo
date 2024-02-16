@@ -38,17 +38,14 @@ public class Patient extends BaseEntity  {
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private LocalDate dob;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(length = 20)
-	private Gender gender;
+	
 	
 	@OneToOne
 	@JoinColumn(name = "address_id")
 	private Address address;
 	
 	
-	@Column(length = 15)
-	private String mobileNo;
+	
 	@Enumerated(EnumType.STRING)
 	@Column(length=10)
 	private Category category;
