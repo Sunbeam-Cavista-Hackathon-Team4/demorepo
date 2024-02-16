@@ -46,8 +46,7 @@ public class Doctor extends BaseEntity  {
 	@Column(length = 15)
 	private String mobileNo;
 	
-	@Column(length = 30)
-	private String emailId;
+	
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id")
