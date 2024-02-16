@@ -18,7 +18,9 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name="doctor")
@@ -38,7 +40,7 @@ public class Doctor extends BaseEntity  {
 	private Gender gender;
 	
 	@Column(length = 30)
-	private String specialization;
+	private String qualification;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private LocalDate joinDate;
@@ -46,7 +48,8 @@ public class Doctor extends BaseEntity  {
 	@Column(length = 15)
 	private String mobileNo;
 	
-	
+	@Enumerated(EnumType.ORDINAL)
+	private Availability availability;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id")
@@ -58,6 +61,8 @@ public class Doctor extends BaseEntity  {
 	
 	@OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL)
 	private List<Appointment> appointments = new ArrayList<Appointment>();
+	
+	
 	
 	
 	
