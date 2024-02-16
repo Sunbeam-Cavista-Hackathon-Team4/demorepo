@@ -11,7 +11,18 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Appointment extends BaseEntity {
 
 	@ManyToOne
@@ -29,37 +40,7 @@ public class Appointment extends BaseEntity {
 	
 	private String remarks; 
 
-	public String getRemarks() {
-		return remarks;
-	}
-
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
-	}
-
-	public LocalDate getDate() {
-		return date;
-	}
-
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-
-	public LocalTime getTime() {
-		return time;
-	}
-
-	public void setTime(LocalTime time) {
-		this.time = time;
-	}
-
-	public Type getType() {
-		return type;
-	}
-
-	public void setType(Type type) {
-		this.type = type;
-	}
+	
 
 	@Enumerated(EnumType.STRING)
 	private Type type;
@@ -67,39 +48,11 @@ public class Appointment extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	private Slot slot;
 
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private Appstatus status;
 
-	public Doctor getDoctor() {
-		return doctor;
-	}
+	
 
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
-	}
-
-	public Patient getPatient() {
-		return patient;
-	}
-
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-	}
-
-	public Slot getSlot() {
-		return slot;
-	}
-
-	public void setSlot(Slot slot) {
-		this.slot = slot;
-	}
-
-	public Appstatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(Appstatus status) {
-		this.status = status;
-	}
+	
 
 }

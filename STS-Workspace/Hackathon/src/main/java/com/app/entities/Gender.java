@@ -1,5 +1,5 @@
 package com.app.entities;
 
 public enum Gender {
-	M,F,O
+	MALE,FEMALE,OTHER,PREFER_NOT_TO_SAY
 }
