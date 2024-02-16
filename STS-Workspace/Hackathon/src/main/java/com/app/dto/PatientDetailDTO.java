@@ -1,16 +1,12 @@
 package com.app.dto;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-
+import com.app.entities.Address;
 import com.app.entities.Category;
 import com.app.entities.Gender;
 
-public class PatientDTO {
-
+public class PatientDetailDTO {
 	
-	private String firstName;
+private String firstName;
 	
 	private String lastName;
 
@@ -19,4 +15,9 @@ public class PatientDTO {
 	private Gender gender;
 
 	private Category category;
+	
+	private Address address;
+	
+	private String mobileNo;
+
 }
