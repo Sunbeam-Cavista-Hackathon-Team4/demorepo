@@ -49,8 +49,9 @@ public class Patient extends BaseEntity  {
 	
 	@Column(length = 15)
 	private String mobileNo;
-	@Column(length=100)
-	private String program;
+	@Enumerated(EnumType.STRING)
+	@Column(length=10)
+	private Category category;
 	
 	@OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
 	@JoinColumn(name = "user_id")
