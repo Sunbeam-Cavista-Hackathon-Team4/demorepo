@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.app.dao.PatientDao;
 import com.app.dao.UnregisteredUserDao;
@@ -16,7 +18,8 @@ import com.app.entities.Patient;
 import com.app.entities.UnregisteredUser;
 import com.app.entities.UserEntity;
 
-
+@Service
+@Transactional
 public class AdminServiceImpl implements AdminService{
 
 	@Autowired
