@@ -35,7 +35,7 @@ public class Doctor extends BaseEntity  {
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private LocalDate dob;
 	
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
 	@Column(length = 30)
@@ -47,7 +47,7 @@ public class Doctor extends BaseEntity  {
 	@Column(length = 15)
 	private String mobileNo;
 	
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private Availability availability;
 	
 	@OneToOne(cascade = CascadeType.ALL)
