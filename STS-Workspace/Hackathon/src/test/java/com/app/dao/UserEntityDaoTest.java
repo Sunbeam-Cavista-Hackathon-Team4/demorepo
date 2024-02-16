@@ -32,8 +32,8 @@ class UserEntityDaoTest {
 	void testAddUsers() {
 		List<UserEntity> list = List.of(
 				new UserEntity("a1", "b1", "a1@gmail.com", enc.encode("12345"), UserRole.ROLE_ADMIN),
-				new UserEntity("a2", "b2", "a2@gmail.com", enc.encode("2345"), UserRole.ROLE_CUSTOMER),
-				new UserEntity("a3", "b3", "a3@gmail.com", enc.encode("1345"), UserRole.ROLE_USER));
+				new UserEntity("a2", "b2", "a2@gmail.com", enc.encode("2345"), UserRole.ROLE_PATIENT),
+				new UserEntity("a3", "b3", "a3@gmail.com", enc.encode("1345"), UserRole.ROLE_DOCTOR));
 		List<UserEntity> list2 = userRepo.saveAll(list);
 		assertEquals(3, list2.size());
 
