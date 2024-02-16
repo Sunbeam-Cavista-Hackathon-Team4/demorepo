@@ -42,7 +42,7 @@ public class Patient extends BaseEntity  {
 	private Gender gender;
 	
 	@OneToOne
-	@JoinColumn("address_id")
+	@JoinColumn(name = "address_id")
 	private Address address;
 	
 	
